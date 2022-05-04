@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CalendarView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/simpleCalendarView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:firstDayOfWeek="2"
+    android:maxDate="01/01/2023"
+    android:minDate="01/01/2016" >
+
+        <Spinner
+            android:id="@+id/services"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Foglalás"
+            android:layout_marginTop="400dp"
+            android:onClick="reserve"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginTop="450dp"
+            android:onClick="cancel"/>
+
+
+</CalendarView>

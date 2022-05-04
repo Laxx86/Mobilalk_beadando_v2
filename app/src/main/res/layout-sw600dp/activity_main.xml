@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gelbg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/EditTextUserNameInsertion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="50dp"
+        android:hint="@string/user_name"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="16dp"
+        />
+
+    <EditText
+        android:id="@+id/EditTextUserPasswordInsertion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:onClick="Login"
+        android:layout_marginTop="40dp"
+        android:text="@string/login" />
+
+    <Button
+        android:id="@+id/LoginWithGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:onClick="LoginWithGoogle"
+        android:layout_marginTop="40dp"
+        android:text="@string/login_with_google" />
+
+    <Button
+        android:id="@+id/LoginwithFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:onClick="LoginWithFacebook"
+        android:layout_marginTop="40dp"
+        android:text="@string/login_with_facebook" />
+
+    <Button
+        android:id="@+id/Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="cancel"
+        android:textSize="50dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/cancel" />
+
+
+</LinearLayout>

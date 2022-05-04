@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Dorci Nails</string>
+    <string name="login_with_facebook">Bejelentkezés Facebook-al</string>
+    <string name="register">Regisztráció</string>
+    <string name="login_with_google">>Bejelentkezés Google-el</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="password">Jelszó</string>
+    <string name="user_name">Felhasználó név</string>
+    <string name="dorci_nails">Dorci Nails</string>
+    <string name="name">Név</string>
+    <string name="e_mail_address">E-mail cím</string>
+    <string name="phone_number">Telefonszám</string>
+    <string name="password_again">Jelszó újra</string>
+    <string name="cancel">Mégsem</string>
+    <string-array name="services">
+        <item>Manikűr</item>
+        <item>Alap francia</item>
+        <item>Erősített géllakk</item>
+        <item>Épített köröm</item>
+        <item>Feltöltés</item>
+    </string-array>
+</resources>
