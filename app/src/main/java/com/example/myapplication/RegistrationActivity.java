@@ -4,8 +4,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import javax.crypto.SecretKey;
 
@@ -19,6 +26,7 @@ public class RegistrationActivity extends AppCompatActivity {
     EditText editTextPasswordRepeat;
 
     public static String LOG_TAG;
+    private FirebaseAuth loginAuth;
 
 
 
@@ -40,6 +48,8 @@ public class RegistrationActivity extends AppCompatActivity {
         editTextPasswordRegister = findViewById(R.id.editTextPasswordRegister);
         editTextPasswordRepeat = findViewById(R.id.editTextPasswordRepeat);
 
+        loginAuth = FirebaseAuth.getInstance();
+
     }
 
     public void Cancel(View view) {
@@ -58,5 +68,20 @@ public class RegistrationActivity extends AppCompatActivity {
             Log.e(LOG_TAG, "Nem egyezik meg a két jelszó!");
             return;
         }
+
+        loginAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.d(LOG_TAG, "Sikeres regisztráció");
+                    finish();
+                } else {
+                    Log.d(LOG_TAG, "Sikertelen regisztráció");
+                    Toast.makeText(RegistrationActivity.this, "Sikertelen regisztráció" + task.getException().getMessage(),  Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        finish();
     }
 }

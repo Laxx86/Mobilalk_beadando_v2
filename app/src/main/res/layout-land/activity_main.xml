@@ -39,15 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="LoginWithGoogle"
-
         android:text="@string/login_with_google" />
 
-    <Button
-        android:id="@+id/LoginwithFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="LoginWithFacebook"
-        android:text="@string/login_with_facebook" />
 
     <Button
         android:id="@+id/Cancel"

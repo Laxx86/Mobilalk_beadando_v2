@@ -48,14 +48,6 @@
         android:layout_marginTop="40dp"
         android:text="@string/login_with_google" />
 
-    <Button
-        android:id="@+id/LoginwithFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:onClick="LoginWithFacebook"
-        android:layout_marginTop="40dp"
-        android:text="@string/login_with_facebook" />
 
     <Button
         android:id="@+id/Cancel"
