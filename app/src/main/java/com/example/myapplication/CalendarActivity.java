@@ -7,11 +7,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 
 public class CalendarActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -19,9 +21,15 @@ public class CalendarActivity extends AppCompatActivity implements AdapterView.O
     private static String LOG_TAG;
 
     private FirebaseUser user;
+    private RecyclerView recyclerView;
+    private int gridNumber = 1;
+
+    private Notif notificationHandler;
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
         spinner = findViewById(R.id.services);
@@ -38,9 +46,11 @@ public class CalendarActivity extends AppCompatActivity implements AdapterView.O
             Log.d(LOG_TAG, "Hibás user");
             finish();
         }
+
+        notificationHandler = new Notif(this);
     }
 
-    public void cancel(View view) {
+        public void cancel(View view) {
         finish();
     }
 
@@ -55,6 +65,6 @@ public class CalendarActivity extends AppCompatActivity implements AdapterView.O
     }
 
     public void reserve(View view) {
-        String serviceTyep = spinner.getSelectedItem().toString();
+        notificationHandler.send("Sajnos ez a gomb csak ennyit tud :(");
     }
 }

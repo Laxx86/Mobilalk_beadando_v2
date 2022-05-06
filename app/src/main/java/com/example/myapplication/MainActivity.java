@@ -96,19 +96,22 @@ public class MainActivity extends AppCompatActivity {
         String userName = userNameReader.getText().toString();
         String password = passwordReader.getText().toString();
 
-        loginAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.d(LOG_TAG, "Login succesfull!");
-                    logged_in = true;
-                    finish();
-                } else {
-                    Log.d(LOG_TAG, "Login failed!");
-                    Toast.makeText(MainActivity.this, "Login failed!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
+        do {
+            loginAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Log.d(LOG_TAG, "Login succesfull!");
+                        logged_in = true;
+                        finish();
+                    } else {
+                        Log.d(LOG_TAG, "Login failed!");
+                        Toast.makeText(MainActivity.this, "Login failed!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
+            });
+        } while ((userName == "") || (password == ""));
     }
 
     public void LoginWithGoogle(View view) {

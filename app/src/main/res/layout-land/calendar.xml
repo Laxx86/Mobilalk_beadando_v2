@@ -11,21 +11,13 @@
             android:id="@+id/services"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="250dp"
             />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Nyomj a FOGLALÁS gombra, hogy kapj egy értesítést :)"
-            android:layout_marginTop="400dp"
-            />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Foglalás"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="300dp"
             android:onClick="reserve"/>
 
 
@@ -33,16 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="350dp"
             android:onClick="cancel"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="550dp"
-            android:text="Sajnos túlgondoltam, nem tudtam megvalósítani a
-naptárból való olvasást, az idő pedig lejárt :( Így ez a rész nem működik."
-                />
 
 
 </CalendarView>

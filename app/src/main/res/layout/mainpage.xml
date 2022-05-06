@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/gelbg"
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tesztgomb"
-        android:onClick="mainactivity"/>
+        android:onClick="mainactivity"
+        android:text="Bejelentkezés"
+
+        app:layout_constraintBottom_toTopOf="@+id/login"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
+        android:id="@+id/booking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tesztgomb2"
-        android:onClick="registeractivity"/>
+        android:onClick="registeractivity"
+        android:text="Regisztráció"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tesztgomb3"
-        android:onClick="calendarActivity"/>
+        android:onClick="calendarActivity"
+        android:text="Foglalás"
 
-</LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
