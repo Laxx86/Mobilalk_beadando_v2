@@ -3,10 +3,9 @@ package com.example.myapplication;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
+
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,30 +15,29 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainPage extends AppCompatActivity {
 
+    private Notif notificationHandler;
+
     public static String LOG_TAG;
 
     public static int SECRET_KEY=99;
 
-    Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
-
-        button = (Button) findViewById(R.id.registration);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Animation anim = AnimationUtils.loadAnimation(MainPage.this, R.anim.rotate);
-                button.startAnimation(anim);
-            }
-        });
+        notificationHandler = new Notif(this);
     }
+
+
+
+
+
 
     public void mainactivity(View view) {
         Intent loginIntent = new Intent(this, MainActivity.class);
         Bundle b = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+
         startActivity(loginIntent, b);
     }
 
@@ -56,6 +54,24 @@ public class MainPage extends AppCompatActivity {
         Intent calendarIntent = new Intent(this, CalendarActivity.class);
         Bundle b = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
         startActivity(calendarIntent ,b);
+
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        notificationHandler.send("Az alkalmazás elindult");
+    }
+
+    public void send_email(View view) {
+        Intent intent=new Intent(Intent.ACTION_SEND);
+        String[] recipients={"mailto@gmail.com"};
+        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Please give the subject");
+        intent.putExtra(Intent.EXTRA_TEXT,"Type text here");
+        intent.putExtra(Intent.EXTRA_CC,"nails@gmail.com");
+        intent.setType("text/html");
+        intent.setPackage("com.google.android.gm");
+        startActivity(Intent.createChooser(intent, "Send mail"));
+    }
 }
