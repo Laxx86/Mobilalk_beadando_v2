@@ -36,10 +36,17 @@
             android:layout_marginTop="500dp"
             android:onClick="cancel"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animation"
+            android:layout_marginTop="550dp"
+            android:onClick="animation"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="600dp"
             android:text="Sajnos túlgondoltam, nem tudtam megvalósítani a
 naptárból való olvasást, az idő pedig lejárt :( Így ez a rész nem működik."
                 />
